@@ -15,17 +15,28 @@ public class Main {
         int port =0;
 
         // connessione server
-        System.out.println("Inserire indirizzo IP del server: ");
+        
         ip = scanner.nextLine();
-        System.out.println("Inserire porta del server: ");
         port = Integer.parseInt(scanner.nextLine());
         Socket s = new Socket(ip, port);
-        System.out.println("connesso");
 
         // creo un modo per ascoltare e parlare
         BufferedReader in = new BufferedReader(new InputStreamReader(s.getInputStream()));
         PrintWriter out = new PrintWriter(s.getOutputStream(), true);
 
-        
+        String response;
+        String message="";
+
+        do {
+             response = in.readLine();
+             if(response.equals("WELCOME")){
+                message = scanner.nextLine();
+                out.println(message);
+             }
+
+
+        } while (!response.equals("BYE"));
+
+
     }
 }
