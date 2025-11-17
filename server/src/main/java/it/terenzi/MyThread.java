@@ -87,6 +87,8 @@ public class MyThread extends Thread{
                         // }
                     }else if(part[0].equals("QUIT")){
                         end=true;
+                    }else{
+                        e=true;
                     }
                 } while (e);
 
