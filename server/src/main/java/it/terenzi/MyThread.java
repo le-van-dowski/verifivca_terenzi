@@ -79,11 +79,15 @@ public class MyThread extends Thread{
                             out.println("END");
                         }
                     }else if(part[0].equals("SET")){
-                        //se part[1] equals getid && (part[2] == "TODO" || part[2]=="DOING" || part[2]=="DONE")
-                        set
-
+                        //se part[1] equals getid && (part[2] == "TODO" || part[2]=="DOING" || part[2]=="DONE");
+                        //setStato(part[2]);
+                    }else if(part[0].equals("DEL")){
+                        // if(part[0].equals(.getid())){
+                        //     tasks.remove(tasks[])
+                        // }
+                    }else if(part[0].equals("QUIT")){
+                        end=true;
                     }
-
                 } while (e);
 
                 response = in.readLine();
@@ -94,12 +98,6 @@ public class MyThread extends Thread{
                 } while (!e);
                 stato="";
                 tasks.add(new Task( parts[1], parts[2],stato,parts[3], username));
-
-
-
-
-
-
 
             }while(!end);
             
